@@ -5,14 +5,14 @@ import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
 import com.eb.api.pubreader.dao.OtherBackend;
-import com.eb.api.pubreader.dao.SampleDataReader;
+import com.eb.api.pubreader.dao.DummyBackend;
 
 @Configuration
 public class AppConfig {
 	@Bean
-	@Conditional(SampleDataCondition.class)
-	public SampleDataReader dummyDB() {
-		return new SampleDataReader();
+	@Conditional(DummyBackendCondition.class)
+	public DummyBackend dummyDB() {
+		return new DummyBackend();
 	}
 
 	@Bean

@@ -15,7 +15,7 @@ import org.springframework.util.ResourceUtils;
 import com.eb.api.pubreader.model.PublishList;
 import com.eb.api.pubreader.model.URLPublish;
 
-public class SampleDataReader implements UserDAO {
+public class DummyBackend implements UserDAO {
 
 	private static Map<String, URLPublish> dataMap = new HashMap<>();
 	private static PublishList pubList;

@@ -8,6 +8,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Handlers error - in this particular scenario, it is returning a custom
+ * message for HTTP status code 404
+ * 
+ * @author Mandar.Shidhore
+ *
+ */
 @RestController
 public class CustomErrorController implements ErrorController {
 
