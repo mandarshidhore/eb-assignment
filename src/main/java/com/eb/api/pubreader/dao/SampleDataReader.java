@@ -1,4 +1,4 @@
-package com.eb.api.pubreader.util;
+package com.eb.api.pubreader.dao;
 
 import java.io.File;
 import java.util.HashMap;
@@ -15,7 +15,7 @@ import org.springframework.util.ResourceUtils;
 import com.eb.api.pubreader.model.PublishList;
 import com.eb.api.pubreader.model.URLPublish;
 
-public class SampleDataReader {
+public class SampleDataReader implements UserDAO {
 
 	private static Map<String, URLPublish> dataMap = new HashMap<>();
 	private static PublishList pubList;

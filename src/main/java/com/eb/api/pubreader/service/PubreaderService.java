@@ -5,25 +5,26 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.eb.api.pubreader.dao.UserDAO;
 import com.eb.api.pubreader.model.PublishList;
 import com.eb.api.pubreader.model.URLPublish;
-import com.eb.api.pubreader.util.SampleDataReader;
 
 @Service
 public class PubreaderService {
 
-	SampleDataReader sampleReader;
+	@Autowired
+	UserDAO dao;
 
 	public URLPublish getURLPublishRecord(String topicid) {
-		return sampleReader.getURLPublishRecord(topicid);
+		return dao.getURLPublishRecord(topicid);
 	}
 
 	public PublishList getAllURLPublishRecords() {
-		return sampleReader.getAllURLPublishRecords();
+		return dao.getAllURLPublishRecords();
 	}
 
 	public List<String> getTopicIDsByClassName(String classname) {
-		return sampleReader.getTopicIDsByClassName(classname);
+		return dao.getTopicIDsByClassName(classname);
 	}
 
 }
