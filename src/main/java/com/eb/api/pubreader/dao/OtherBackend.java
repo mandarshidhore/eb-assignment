@@ -2,6 +2,9 @@ package com.eb.api.pubreader.dao;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.eb.api.pubreader.model.PublishList;
 import com.eb.api.pubreader.model.URLPublish;
 
@@ -15,9 +18,13 @@ import com.eb.api.pubreader.model.URLPublish;
  */
 public class OtherBackend implements UserDAO {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(OtherBackend.class);
+
 	// for demo purpose
 	static {
-		System.out.println("Loading Other Backend...");
+		LOGGER.info("\n===========================");
+		LOGGER.info("\n>> Loading Other Backend...");
+		LOGGER.info("\n===========================");
 	}
 
 	@Override

@@ -1,14 +1,18 @@
 package com.eb.api.pubreader.dao;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ResourceUtils;
 
@@ -17,12 +21,16 @@ import com.eb.api.pubreader.model.URLPublish;
 
 public class DummyBackend implements UserDAO {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(DummyBackend.class);
 	private static Map<String, URLPublish> dataMap = new HashMap<>();
 	private static PublishList pubList;
 
 	// load sample data
 	static {
 		try {
+			LOGGER.info("\n========================");
+			LOGGER.info("\n>> Loading dummy data...");
+			LOGGER.info("\n========================");
 			File file = ResourceUtils.getFile("src/main/resources/exampledata/britannica_topics.xml");
 			JAXBContext jaxbContext = JAXBContext.newInstance(PublishList.class);
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -30,8 +38,10 @@ public class DummyBackend implements UserDAO {
 			pubList.getUrlPublish().forEach(urlPubRecord -> {
 				dataMap.put(urlPubRecord.getTopicid(), urlPubRecord);
 			});
-		} catch (Exception e) {
-			System.err.println("Error");
+		} catch (FileNotFoundException | JAXBException e) {
+			// right now, just simply logging exception - in real world application, this
+			// would be handled differently
+			LOGGER.error("++++ Error while loading dummy data ++++");
 		}
 	}
 
