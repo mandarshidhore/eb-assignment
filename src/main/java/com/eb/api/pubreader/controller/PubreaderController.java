@@ -1,13 +1,10 @@
 package com.eb.api.pubreader.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eb.api.pubreader.model.PublishList;
@@ -39,6 +36,16 @@ public class PubreaderController {
 	@GetMapping("/eb/all/topic")
 	public PublishList getAllURLPublishRecords() {
 		return readerService.getAllURLPublishRecords();
+	}
+	
+	/**
+	 * Retrieves all topic for a given clas sname
+	 * 
+	 * @return PublishList
+	 */
+	@GetMapping("/eb/class/{class-name}")
+	public List<String> getTopicIDsByClassName(@PathVariable("class-name") String classname) {
+		return readerService.getTopicIDsByClassName(classname);
 	}
 
 }

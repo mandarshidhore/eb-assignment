@@ -15,7 +15,6 @@ public class CustomErrorController implements ErrorController {
 
 	@RequestMapping(value = "/error")
 	public ResponseEntity error(HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("Error");
 		return ResponseEntity.status(response.getStatus()).body("HTTP 404 \n--------\nNot Found -> Invalid URL");
 	}
 
