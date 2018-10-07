@@ -28,9 +28,9 @@ public class DummyBackend implements UserDAO {
 	// load sample data
 	static {
 		try {
-			LOGGER.info("\n========================");
-			LOGGER.info("\n>> Loading dummy data...");
-			LOGGER.info("\n========================");
+			LOGGER.info("\n=============================\n");
+			LOGGER.info("	>> Loading dummy data...	");
+			LOGGER.info("\n=============================\n");
 			File file = ResourceUtils.getFile("src/main/resources/exampledata/britannica_topics.xml");
 			JAXBContext jaxbContext = JAXBContext.newInstance(PublishList.class);
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -41,7 +41,9 @@ public class DummyBackend implements UserDAO {
 		} catch (FileNotFoundException | JAXBException e) {
 			// right now, just simply logging exception - in real world application, this
 			// would be handled differently
-			LOGGER.error("++++ Error while loading dummy data ++++");
+			LOGGER.info("\n+++++++++++++++++++++++++++++++++\n");
+			LOGGER.error("	Error while loading dummy data	");
+			LOGGER.info("\n+++++++++++++++++++++++++++++++++\n");
 		}
 	}
 

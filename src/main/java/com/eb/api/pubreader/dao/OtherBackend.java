@@ -22,9 +22,9 @@ public class OtherBackend implements UserDAO {
 
 	// for demo purpose
 	static {
-		LOGGER.info("\n===========================");
-		LOGGER.info("\n>> Loading Other Backend...");
-		LOGGER.info("\n===========================");
+		LOGGER.info("\n============================\n");
+		LOGGER.info("\n	>> Loading Other Backend...	");
+		LOGGER.info("\n============================\n");
 	}
 
 	@Override
