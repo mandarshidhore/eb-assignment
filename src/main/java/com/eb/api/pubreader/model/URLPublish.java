@@ -3,41 +3,68 @@ package com.eb.api.pubreader.model;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "url-publish")
 public class URLPublish {
 
 	@XmlElement(name = "topicid")
-	private String topicId;
+	private String topicid;
 
 	@XmlElement(name = "urltitle")
-	private String urlTitle;
+	private String urltitle;
 
 	@XmlElement(name = "urlclass")
-	private String urlClass;
+	private String urlclass;
 
-	public String getTopicId() {
-		return topicId;
+	public URLPublish() {
+
 	}
 
-	public void setTopicId(String topicId) {
-		this.topicId = topicId;
+	public URLPublish(String topicid, String urltitle, String urlclass) {
+		this.topicid = topicid;
+		this.urltitle = urltitle;
+		this.urlclass = urlclass;
 	}
 
-	public String getUrlTitle() {
-		return urlTitle;
+	public String getTopicid() {
+		return topicid;
 	}
 
-	public void setUrlTitle(String urlTitle) {
-		this.urlTitle = urlTitle;
+	public void setTopicid(String topicid) {
+		this.topicid = topicid;
 	}
 
-	public String getUrlClass() {
-		return urlClass;
+	public String getUrltitle() {
+		return urltitle;
 	}
 
-	public void setUrlClass(String urlClass) {
-		this.urlClass = urlClass;
+	public void setUrltitle(String urltitle) {
+		this.urltitle = urltitle;
+	}
+
+	public String getUrlclass() {
+		return urlclass;
+	}
+
+	public void setUrlclass(String urlclass) {
+		this.urlclass = urlclass;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof URLPublish) {
+			URLPublish urlPublish = URLPublish.class.cast(obj);
+			if (this.topicid.equals(urlPublish.getTopicid()) && this.urltitle.equals(urlPublish.getUrltitle())
+					&& this.urlclass.equals(urlPublish.getUrlclass())) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
 	}
 
 }
