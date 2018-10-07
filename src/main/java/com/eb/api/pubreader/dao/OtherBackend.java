@@ -6,8 +6,9 @@ import com.eb.api.pubreader.model.PublishList;
 import com.eb.api.pubreader.model.URLPublish;
 
 /**
- * This class is for demonstration purpose only - if this backend is loaded at
- * runtime, we return null for any given URL request
+ * This could be a class for either relational or NoSQL db - this is for demo
+ * purpose only - right now, it returns null for any given URL request if this
+ * backend is loaded at runtime
  * 
  * @author Mandar.Shidhore
  *
