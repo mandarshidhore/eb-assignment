@@ -12,7 +12,6 @@ import com.eb.api.pubreader.util.SampleDataReader;
 @Service
 public class PubreaderService {
 
-	@Autowired
 	SampleDataReader sampleReader;
 
 	public URLPublish getURLPublishRecord(String topicid) {

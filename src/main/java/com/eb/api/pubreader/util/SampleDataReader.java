@@ -9,14 +9,12 @@ import java.util.stream.Collectors;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
-import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ResourceUtils;
 
 import com.eb.api.pubreader.model.PublishList;
 import com.eb.api.pubreader.model.URLPublish;
 
-@Component
 public class SampleDataReader {
 
 	private static Map<String, URLPublish> dataMap = new HashMap<>();
@@ -59,8 +57,8 @@ public class SampleDataReader {
 				.collect(Collectors.toList());
 		// we could add a validation error - if required to return an error message
 		// informing the user that the class name is not one of the valid ones - if
-		// that's the use case in future, I'll create a Validator class under util
-		// package and write my validations there
+		// that's the use case in future, I'll create a Validator class under .util
+		// package and write my validations there.
 		return CollectionUtils.isEmpty(topicIDsList) ? null : topicIDsList;
 	}
 
