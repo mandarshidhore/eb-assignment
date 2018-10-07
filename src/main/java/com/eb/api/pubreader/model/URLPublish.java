@@ -7,13 +7,13 @@ import javax.xml.bind.annotation.XmlElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class URLPublish {
 
-	@XmlElement(name="topicid")
+	@XmlElement(name = "topicid")
 	private String topicId;
 
-	@XmlElement(name="urltitle")
+	@XmlElement(name = "urltitle")
 	private String urlTitle;
 
-	@XmlElement(name="urlclass")
+	@XmlElement(name = "urlclass")
 	private String urlClass;
 
 	public String getTopicId() {
