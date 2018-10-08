@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "85a11d21-6f24-4da7-a6c5-591310f97109",
+		"name": "eb-assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get A Topic",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/eb/topic/4144",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"topic",
+						"4144"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Topic IDs by classname",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/eb/class/topic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"class",
+						"topic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Topics",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/eb/all/topic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eb",
+						"all",
+						"topic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "404 Not Found",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/randomwrongurl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"randomwrongurl"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
