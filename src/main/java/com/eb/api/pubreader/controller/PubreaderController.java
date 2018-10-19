@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eb.api.pubreader.model.PublishList;
@@ -46,6 +48,16 @@ public class PubreaderController {
 	@GetMapping("/eb/class/{class-name}")
 	public List<String> getTopicIDsByClassName(@PathVariable("class-name") String classname) {
 		return readerService.getTopicIDsByClassName(classname);
+	}
+	
+	@GetMapping("/eb/getclass/{class}")
+	public List<URLPublish> getURLPublishRecordsByClassName(@PathVariable("class") String cname) {
+		return readerService.getURLPublihRecordsByClassName(cname);
+	}
+	
+	@PostMapping("/eb/addtopic")
+	public void insertTopic(@RequestBody URLPublish urlPublish) {
+		readerService.addTopic(urlPublish);
 	}
 
 }

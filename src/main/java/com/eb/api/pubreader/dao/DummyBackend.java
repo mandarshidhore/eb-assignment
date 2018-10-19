@@ -74,4 +74,17 @@ public class DummyBackend implements UserDAO {
 		return CollectionUtils.isEmpty(topicIDsList) ? null : topicIDsList;
 	}
 
+	@Override
+	public List<URLPublish> getURLPublihRecordsByClassName(String cname) {
+		return pubList.getUrlPublish().stream().filter(upitem -> cname.equalsIgnoreCase(upitem.getUrlclass()))
+				.collect(Collectors.toList());
+	}
+
+	@Override
+	public void addTopic(URLPublish urlPublish) {
+		pubList.getUrlPublish().add(urlPublish);
+		dataMap.put(urlPublish.getTopicid(), urlPublish);
+		System.out.println();
+	}
+
 }

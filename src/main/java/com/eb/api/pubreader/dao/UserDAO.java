@@ -13,4 +13,8 @@ public interface UserDAO {
 	
 	public List<String> getTopicIDsByClassName(String classname);
 
+	public List<URLPublish> getURLPublihRecordsByClassName(String cname);
+
+	public void addTopic(URLPublish urlPublish);
+
 }

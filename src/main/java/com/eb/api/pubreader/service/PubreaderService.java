@@ -27,4 +27,16 @@ public class PubreaderService {
 		return dao.getTopicIDsByClassName(classname);
 	}
 
+	public List<URLPublish> getURLPublihRecordsByClassName(String cname) {
+		return dao.getURLPublihRecordsByClassName(cname);
+	}
+
+	public void addTopic(URLPublish urlPublish) {
+		dao.addTopic(urlPublish);
+	}
+
+	public void addMVCTopic(URLPublish urlPublish) {
+		dao.addTopic(urlPublish);
+	}
+
 }

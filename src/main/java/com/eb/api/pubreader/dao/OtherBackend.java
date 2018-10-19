@@ -42,4 +42,16 @@ public class OtherBackend implements UserDAO {
 		return null;
 	}
 
+	@Override
+	public List<URLPublish> getURLPublihRecordsByClassName(String cname) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addTopic(URLPublish urlPublish) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
